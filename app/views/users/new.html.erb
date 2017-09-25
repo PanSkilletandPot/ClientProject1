@@ -1,17 +1,21 @@
 <h3>Sign up today to start using Pan, Skillet and Pot</h3>
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
 
-<form action="/users" method="post">
-  <div class="form_inputs">
-    <label for="username">Username:</label>
-    <input id="username" type="text" name="user[username]" value="">
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
-  <div class="form_inputs">
-    <label for="email">Email:</label>
-    <input id="email" type="text" name="user[email]" value="">
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
   </div>
-  <div class="form_inputs">
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="user[password]" value="">
+
+  <div>
+    <%= f.submit %>
   </div>
-  <input class="form_btns" type="submit" value="Continue">
-</form>
+<% end %>
