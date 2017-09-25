@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [ :new, :create, :delete ]
   post '/reviews' => 'reviews#create'
 
-  root "users#session"
+  #category
+  get "/categories/appetizers", to: "categories#appetizers", as: "appetizers"
+  get "/categories/salads", to: "categories#salads", as: "salads"
+  get "/categories/main-courses", to: "categories#main_courses", as: "main-courses"
+  get "/categories/desserts", to: "categories#desserts", as: "desserts"
+
+  # root "users#session"
 end

@@ -1,4 +1,5 @@
-class RecipeController < ApplicationController
+class RecipesController < ApplicationController
+
   include UserHelper
   def index
     @recipes = Recipe.all
