@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
   def Appetizers
     @appetizers = Recipe.select {|obj| obj.category == "appetizer"}
   end
