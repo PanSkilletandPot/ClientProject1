@@ -1,5 +1,10 @@
-<h3>Login to start using Pan, Skillet and Pot</h3>
+<h3>Register today to start using Pan, Skillet and Pot</h3>
 <%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email %>
