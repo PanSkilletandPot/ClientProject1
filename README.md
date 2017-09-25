@@ -1,24 +1,18 @@
-# README
+# The Pan Skillet and Pot Grill
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby On Rails 5.1.4
 
-Things you may want to cover:
+Rails-React
 
-* Ruby version
+## Contributors
+@KwakDesigns
 
-* System dependencies
+@sbrady11 
 
-* Configuration
+@ed13f
 
-* Database creation
+## User Story
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A user comes to our site and registers via the registration page by entering a username, email and password.
+A user can log in to our site via the login page by entering their email and password. Once logged in or registered the user is led to the recipe index page which shows ALL recipes in ALL categories. The user can utilize the navigation bar which is present in ALL pages which contains the home button, create new recipe button, profile page button, recipe category button and sign in/out button. On the recipe index landing page the user can utilize a sub category navigation to go to a specific recipe category index page. The user can go to their profile page to view their username and the recipes they have created. The users can go also go to each recipe page that they created. The user can create a recipe at the recipe create page.
+Finally, the user can view a recipe on the specific recipe show page which show the recipe's name, rating, difficulty level, ingredients, category, prep time, directions and recipe creator. If the user happens to be the creator then show the edit recipe and delete recipe button.
