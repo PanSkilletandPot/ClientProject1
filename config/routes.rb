@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get "/categories/main-courses", to: "categories#main_courses", as: "main-courses"
   get "/categories/desserts", to: "categories#desserts", as: "desserts"
 
-  # root "users#session"
+  root "users#new"
 end
