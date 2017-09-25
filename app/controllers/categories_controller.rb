@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def main_courses
-    @main_courses = Recipe.select {|obj| obj.category == "course"}
+    @main_courses = Recipe.select {|obj| obj.category == "main_course"}
   end
 
   def desserts
