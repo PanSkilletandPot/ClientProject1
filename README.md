@@ -6,7 +6,9 @@ Rails-React
 
 ## Contributors
 @KwakDesigns
+
 @sbrady11 
+
 @ed13f
 
 ## User Story
