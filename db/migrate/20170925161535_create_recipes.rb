@@ -1,5 +1,5 @@
 class CreateRecipes < ActiveRecord::Migration[5.1]
-  def change
+  def changeg
     create_table :recipes do |t|
       t.string :recipe_name, null: false
       t.string :category, null: false
