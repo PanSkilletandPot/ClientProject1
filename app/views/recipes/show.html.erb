@@ -4,7 +4,14 @@
     <h2><%= @recipe.category %></h2>
   </div>
   <div id='recipe_body'>
-    <%= @recipe.prep_time %> <br>
-    <%= @recipe.instructions %>
+    prep time: <%= @recipe.prep_time %> <br>
+    instructions: <%= @recipe.instructions %>
   </div>
+</div>
+<div class='reviews'>
+<h3> Reviews </h3>
+  <% @reviews.each do |review| %>
+    <%= review.user.username %><br>
+    <%= review.body %>
+  <% end %>
 </div>
