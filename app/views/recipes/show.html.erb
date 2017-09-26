@@ -8,3 +8,9 @@
     <%= @recipe.instructions %>
   </div>
 </div>
+<div class='reviews'>
+  <% @recipe.reviews.each do |review| %>
+  <%= review.user.username %><br>
+  <%= review %>
+  <% end %>
+</div>
