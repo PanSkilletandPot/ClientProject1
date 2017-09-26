@@ -1,16 +1,16 @@
 <h3>Login to start using Pan, Skillet and Pot</h3>
-<%= form_for(@user) do |f| %>
+<%= form_tag :action => :create, local: true do |f| %>
   <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= submit_tag 'Login' %>
   </div>
 <% end %>
