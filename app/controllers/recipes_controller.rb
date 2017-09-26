@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to action: "ingredient", id: @recipe.id
     else
       @errors = ["error"]
       render 'new'
@@ -45,7 +45,8 @@ class RecipesController < ApplicationController
     redirect_to 'index'
   end
 
-  def ingredients
+  def ingredient
+    @recipe = Recipe.find(params[:id])
     @ingredient = Ingredient.new
   end
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [ :new, :create]
 
   delete '/sessions/' => 'sessions#destroy'
-  get '/recipes/:id/ingredients' => 'recipes#ingredients'
+  get '/recipes/:id/ingredients' => 'recipes#ingredient'
 
   #category
   get "/categories/appetizers", to: "categories#appetizers", as: "appetizers"
