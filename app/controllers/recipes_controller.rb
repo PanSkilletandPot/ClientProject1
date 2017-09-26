@@ -4,10 +4,14 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def reviews
+    require_user
+    @review = Review.new(review_params)
+  end
+
   def create
     require_user
     @recipe = Recipe.new(recipe_params)
-    @review = Review.new(review_params)
     if @recipe.save
       redirect_to @recipe
     else
@@ -54,5 +58,9 @@ class RecipesController < ApplicationController
   private
     def recipe_params
       params.require(:recipe).permit(:recipe_name, :category, :ingredients, :prep_time, :instructions, :user_id)
+    end
+
+    def review_params
+      params.require(:review).permit(:rating, :content, :user_id, :recipe_id)
     end
 end

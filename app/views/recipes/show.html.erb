@@ -12,7 +12,7 @@
 
 <% if logged_in? %>
   <h3> Write a review </h3>
-    <%= form_for :review, url: { action: "create" } do |f| %>
+    <%= form_for :review, url: { action: "reviews" } do |f| %>
       <%= f.label :rating %><br>
       <%= f.select :rating, [ 0,1,2,3,4,5 ]%>
       <%= f.label :body %><br>
