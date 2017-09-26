@@ -1,0 +1,8 @@
+<h1> Salads </h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.category == 'Salad'%>
+        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
+      <% end %>
+    <% end %>
+  </ul>
