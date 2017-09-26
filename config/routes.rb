@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   resources :recipes
   resources :sessions, only: [ :new, :create ]
 
-
   delete '/sessions/' => 'sessions#destroy'
-  get '/recipes/:id/ingredients' => 'recipes#ingredients'
 
+  get '/recipes/:id/ingredients' => 'recipes#ingredients'
   post "/recipes/:id/reviews" => "recipes#reviews", as: "new_review"
 
 
@@ -16,5 +15,5 @@ Rails.application.routes.draw do
   get "/categories/main-courses", to: "categories#main_courses", as: "main-courses"
   get "/categories/desserts", to: "categories#desserts", as: "desserts"
 
-  root "users#new"
+  root "recipes#index"
 end

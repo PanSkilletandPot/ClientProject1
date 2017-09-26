@@ -1,17 +1,17 @@
 class CategoriesController < ApplicationController
   def appetizers
-    @appetizers = Recipe.select { |obj| obj.category == "Appetizer" }
+    @recipes = Recipe.all
   end
 
   def salads
-    @salads = Recipe.select { |obj| obj.category == "Salad" }
+    @recipes = Recipe.all
   end
 
   def main_courses
-    @main_courses = Recipe.select { |obj| obj.category == "Main" }
+    @recipes = Recipe.all
   end
 
   def desserts
-    @desserts = Recipe.select { |obj| obj.category == "Dessert" }
+    @recipes = Recipe.all
   end
 end

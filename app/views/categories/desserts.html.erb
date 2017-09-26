@@ -1,6 +1,8 @@
 <h1> Desserts </h1>
-<ul>
-  <% @desserts.each do |dessert| %>
-    <li><%= link_to dessert.recipe_name, recipe_path(recipe.id) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.category == 'Dessert' %>
+       <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
+      <% end %>
+    <% end %>
+  </ul>
