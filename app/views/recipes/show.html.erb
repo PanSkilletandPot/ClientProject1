@@ -16,18 +16,22 @@
 
 <% if logged_in? %>
   <h3> Write a review </h3>
-    <%= form_for :review, url: { action: "reviews" } do |f| %>
+    <%= form_for :review, url: { :controller => "recipes", action: "reviews" } do |f| %>
       <%= f.label :rating %><br>
       <%= f.select :rating, [ 0,1,2,3,4,5 ]%>
       <%= f.label :body %><br>
       <%= f.text_area :body%>
+      <%= f.hidden_field :recipe_id, :value => @recipe.id%>
+      <%= f.hidden_field :user_id, :value => @user_id%>
       <%= f.submit %>
   <% end %>
 <% end %>
 
 <h3> Reviews </h3>
+  <ul>
   <% @reviews.each do |review| %>
-    <%= review.user.username %><br>
-    <%= review.body %>
+    <li>Reviewer: <%= review.user.username %><br></li>
+    <li>Body: <%= review.body %></li></br>
   <% end %>
+  </ul>
 </div>

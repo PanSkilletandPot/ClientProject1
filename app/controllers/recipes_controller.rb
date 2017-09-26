@@ -6,7 +6,10 @@ class RecipesController < ApplicationController
 
   def reviews
     require_user
+    @recipes = Recipe.all
     @review = Review.new(review_params)
+    @review.save
+    render 'index'
   end
 
   def create
@@ -30,6 +33,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @user_id = session[:user_id]
     @reviews = @recipe.reviews
   end
 
@@ -71,7 +75,7 @@ class RecipesController < ApplicationController
     end
 
     def review_params
-      params.require(:review).permit(:rating, :content, :user_id, :recipe_id)
+      params.require(:review).permit(:rating, :body, :user_id, :recipe_id)
     end  
   
     def ingredient_params
