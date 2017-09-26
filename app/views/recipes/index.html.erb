@@ -1,19 +1,19 @@
 <div id='recipe_index'>
 <h1> Recipes </h1>
   <h3> Appetizer </h3>
-    <%= @recipes.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
       <% if recipe.category == 'appetizer'%>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
   <h3> Salad </h3>
-      <%= @recipes.each do |recipe| %>
+      <% @recipes.each do |recipe| %>
       <% if recipe.category == 'salad'%>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
   <h3> Main Courses </h3>
-      <%= @recipes.each do |recipe| %>
+      <% @recipes.each do |recipe| %>
       <% if recipe.category == 'main_course' %>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
