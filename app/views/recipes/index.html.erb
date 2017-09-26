@@ -1,27 +1,38 @@
 <div id='recipe_index'>
 <h1> Recipes </h1>
   <h3> Appetizer </h3>
+  <ul>
     <% @recipes.each do |recipe| %>
       <% if recipe.category == 'App'%>
-        <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
+        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
       <% end %>
     <% end %>
+  </ul>
     <%= link_to "show more", appetizers_path %>
   <h3> Salad </h3>
+  <ul>
       <% @recipes.each do |recipe| %>
       <% if recipe.category == 'Salad'%>
-        <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
+        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
       <% end %>
     <% end %>
+  </ul>
+    <%= link_to "show more", salads_path %>
   <h3> Main Courses </h3>
+  <ul>
       <% @recipes.each do |recipe| %>
       <% if recipe.category == 'Main' %>
-        <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
+        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
       <% end %>
     <% end %>
+  </ul>
+    <%= link_to "show more", main_courses_path %>
   <h3> Dessert </h3>
+  <ul>
     <% @recipes.each do |recipe| %>
       <% if recipe.category == 'Dessert' %>
-        <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
+       <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
       <% end %>
     <% end %>
+  </ul>
+    <%= link_to "show more", desserts_path %>
