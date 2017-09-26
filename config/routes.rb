@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   resources :users, only: [ :new, :create, :show ]
   resources :recipes
-  resources :sessions, only: [ :new, :create]
+  resources :sessions, only: [ :new, :create ]
+
 
   delete '/sessions/' => 'sessions#destroy'
   get '/recipes/:id/ingredients' => 'recipes#ingredients'
+
+  post "/recipes/:id/reviews" => "recipes#reviews", as: "new_review"
+
 
   #category
   get "/categories/appetizers", to: "categories#appetizers", as: "appetizers"

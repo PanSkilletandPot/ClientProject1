@@ -5,7 +5,9 @@ class RecipesController < ApplicationController
   end
 
   def create
+    require_user
     @recipe = Recipe.new(recipe_params)
+    @review = Review.new(review_params)
     if @recipe.save
       redirect_to @recipe
     else
