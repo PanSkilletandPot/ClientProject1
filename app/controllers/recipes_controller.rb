@@ -28,8 +28,8 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if current_user == @recipe.user_id
-      @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
+    if current_user.id == @recipe.user_id
       @recipe.assign_attributes(recipe_params)
         if @recipe.save
           redirect_to @recipe
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to 'index'
+    redirect_to recipes_path
   end
 
   def ingredients

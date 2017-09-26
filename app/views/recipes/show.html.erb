@@ -8,6 +8,10 @@
     instructions: <%= @recipe.instructions %>
   </div>
 </div>
+<% if current_user && current_user.id == @recipe.user_id %>
+  <%= link_to "Edit", edit_recipe_path(@recipe) %>
+  <%= link_to "Delete", @recipe, {method: :delete, data: { confirm: 'Are you sure?' }} %>
+<% end %>
 <div class='reviews'>
 <h3> Reviews </h3>
   <% @reviews.each do |review| %>

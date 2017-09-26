@@ -12,31 +12,29 @@
   </head>
 
   <body>
-    <div>
-      <ul>
-        <li>
-          <%= link_to "Home", {:controller => "recipes", :action=> "index"}, :method => :get %>
-        </li>
-        <li>
-          <%= link_to "New Recipes", {:controller => "recipes", :action=> "new"}, :method => :get %>
-        </li>
-        <li>
-          <%= link_to "Category", {:controller => "recipes", :action=> "index"}, :method => :get %>
-        </li>
-        <% if session[:user_id] %>
-          <li>
-            <%= link_to "logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
-          </li>
-          <li>
-            <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Pan Skillet & Pot</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home", {:controller => "recipes", :action=> "index"}, :method => :get %></li>
+          <li><%= link_to "Category", {:controller => "recipes", :action=> "index"}, :method => :get %></li>
+          <% if session[:user_id] %>
+            <li>
+              <%= link_to "logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
+            </li>
+            <li>
+              <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
