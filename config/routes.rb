@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :users, only: [ :new, :create, :show ]
   resources :recipes
-  resources :sessions, only: [ :new, :create]
-  
+  resources :sessions, only: [ :new, :create ]
+
   delete '/sessions/' => 'sessions#destroy'
 
   #category
