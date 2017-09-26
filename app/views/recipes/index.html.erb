@@ -2,26 +2,26 @@
 <h1> Recipes </h1>
   <h3> Appetizer </h3>
     <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'appetizer'%>
+      <% if recipe.category == 'App'%>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
     <%= link_to "show more", appetizers_path %>
   <h3> Salad </h3>
       <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'salad'%>
+      <% if recipe.category == 'Salad'%>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
   <h3> Main Courses </h3>
       <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'main_course' %>
+      <% if recipe.category == 'Main' %>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
   <h3> Dessert </h3>
     <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'dessert' %>
+      <% if recipe.category == 'Dessert' %>
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
