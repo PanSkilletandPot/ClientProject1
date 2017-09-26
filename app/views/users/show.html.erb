@@ -1,0 +1,9 @@
+<h2>Welcome <%= @user.username %></h2>
+<% if @user.recipes %>
+  <p>Here are the recipes you have created:</p>
+  <% @user.recipes.each do |recipe| %>
+    <ul>
+      <li><%= link_to recipe.recipe_name, recipe %></li>
+    </ul>
+  <% end %>
+<% end %>
