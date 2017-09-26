@@ -20,18 +20,18 @@
         <li>
           <%= link_to "Category", {:controller => "recipes", :action=> "index"}, :method => :get %>
         </li>
-          <% if session[:user_id] %>
-            <li>
-              <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
-            </li>
-            <li>
-              <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
-            </li>
-          <% end %>
+        <% if session[:user_id] %>
+          <li>
+            <%= link_to "logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
+          </li>
+          <li>
+            <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
+          </li>
+        <% end %>
       </ul>
     </div>
     <%= yield %>

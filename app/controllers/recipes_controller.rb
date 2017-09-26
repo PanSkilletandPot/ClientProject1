@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   include UserHelper
   def index
     @recipes = Recipe.all
@@ -19,7 +18,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def edit 
+  def edit
     @recipe = Recipe.find(params[:id])
   end
 
