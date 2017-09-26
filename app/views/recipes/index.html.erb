@@ -6,6 +6,7 @@
         <%= link_to recipe.recipe_name, recipe_path(recipe.id) %>
       <% end %>
     <% end %>
+    <%= link_to "show more", appetizers_path %>
   <h3> Salad </h3>
       <% @recipes.each do |recipe| %>
       <% if recipe.category == 'salad'%>
