@@ -1,0 +1,20 @@
+<h1>Ingredient new</h1>
+<div class='recipe'>
+  <div id='heading'>
+    <h1><%= @recipe.recipe_name %></h1>
+    <h2><%= @recipe.category %></h2>
+  </div>
+  <div id='recipe_body'>
+    prep time: <%= @recipe.prep_time %> <br>
+    instructions: <%= @recipe.instructions %>
+  </div>
+</div>
+
+<%= form_with model: @ingredients, local: true do |form| %>
+  <p>
+    <%= form.label :ingredient %><br>
+    <%= form.text_field :ingredient %>
+  </p>
+
+  <%= form.submit %>
+<% end %>

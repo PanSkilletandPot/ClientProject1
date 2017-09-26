@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe
     else
-      @errors = @user.errors.full_messages
+      @errors = ["error"]
       render 'new'
     end
   end
@@ -43,6 +43,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to 'index'
+  end
+
+  def ingredients
+    @ingredient = Ingredient.new
   end
 
   private
