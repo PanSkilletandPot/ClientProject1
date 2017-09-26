@@ -47,11 +47,24 @@ class RecipesController < ApplicationController
 
   def ingredient
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients.all
     @ingredient = Ingredient.new
   end
+
+  def create_ingredients
+    @ingredient = Ingredient.new(ingredient_params)
+    p @ingredient
+    @ingredient.save
+    redirect_to action: "ingredient", id: params[:id]
+  end
+
 
   private
     def recipe_params
       params.require(:recipe).permit(:recipe_name, :category, :ingredients, :prep_time, :instructions, :user_id)
+    end
+
+    def ingredient_params
+      params.require(:ingredient).permit(:ingredient, :recipe_id)
     end
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   delete '/sessions/' => 'sessions#destroy'
   get '/recipes/:id/ingredients' => 'recipes#ingredient'
+  post '/recipes/:id/ingredients' => 'recipes#create_ingredients'
 
   #category
   get "/categories/appetizers", to: "categories#appetizers", as: "appetizers"

@@ -10,11 +10,21 @@
   </div>
 </div>
 
-<%= form_with model: @ingredients, local: true do |form| %>
+
+<h1>Ingredients</h1>
+<ul>
+  <% @ingredients.each do |ing| %>
+    <li><%= ing.ingredient %></li>
+  <% end %>
+</ul>
+
+<%= form_for @ingredient, url: {action: "create_ingredients"}, local: true do |form| %>
+<% p @ingredient %>
   <p>
     <%= form.label :ingredient %><br>
     <%= form.text_field :ingredient %>
   </p>
+  <%= form.hidden_field :recipe_id, :value => @recipe.id %>
 
   <%= form.submit %>
 <% end %>
