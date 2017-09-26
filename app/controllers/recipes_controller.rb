@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     require_user
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to action: "ingredient", id: @recipe.id
     else
       @errors = ["error"]
       render 'new'
@@ -51,9 +51,19 @@ class RecipesController < ApplicationController
     redirect_to 'index'
   end
 
-  def ingredients
+  def ingredient
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients.all
     @ingredient = Ingredient.new
   end
+
+  def create_ingredients
+    @ingredient = Ingredient.new(ingredient_params)
+    p @ingredient
+    @ingredient.save
+    redirect_to action: "ingredient", id: params[:id]
+  end
+
 
   private
     def recipe_params
@@ -62,5 +72,9 @@ class RecipesController < ApplicationController
 
     def review_params
       params.require(:review).permit(:rating, :content, :user_id, :recipe_id)
+    end  
+  
+    def ingredient_params
+      params.require(:ingredient).permit(:ingredient, :recipe_id)
     end
 end
