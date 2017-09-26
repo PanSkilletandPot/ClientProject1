@@ -9,6 +9,9 @@
   </div>
 </div>
 <div class='reviews'>
+<% if logged_in? %>
+  hello
+<%end%>
 <h3> Reviews </h3>
   <% @reviews.each do |review| %>
     <%= review.user.username %><br>
