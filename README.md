@@ -19,25 +19,25 @@ Finally, the user can view a recipe on the specific recipe show page which show 
 
 ## Screenshots
 
-(https://user-images.githubusercontent.com/21227322/30912686-9580ba74-a35b-11e7-88e6-193e2b6ba9b3.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912686-9580ba74-a35b-11e7-88e6-193e2b6ba9b3.jpeg "Screen1")
 
 ## Registration
-(https://user-images.githubusercontent.com/21227322/30912694-9e7476f2-a35b-11e7-8e9a-a17f8ea3fb83.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912694-9e7476f2-a35b-11e7-8e9a-a17f8ea3fb83.jpeg "Screen2")
 
 ## Show
-(https://user-images.githubusercontent.com/21227322/30912697-9ff63cea-a35b-11e7-97f5-674cb47b3e09.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912697-9ff63cea-a35b-11e7-97f5-674cb47b3e09.jpeg "Screen3")
 
 ## Profile
-(https://user-images.githubusercontent.com/21227322/30912703-a404952a-a35b-11e7-8450-21fa65fd0185.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912703-a404952a-a35b-11e7-8450-21fa65fd0185.jpeg "Screen4")
 
 ## Recipe Creation
-(https://user-images.githubusercontent.com/21227322/30912704-a50d44a8-a35b-11e7-9741-67db9809a6b1.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912704-a50d44a8-a35b-11e7-9741-67db9809a6b1.jpeg "Screen5")
 
 ## Adding Ingredients
-(https://user-images.githubusercontent.com/21227322/30912710-aa8c4ed8-a35b-11e7-848d-5ed87853a588.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912710-aa8c4ed8-a35b-11e7-848d-5ed87853a588.jpeg "Screen6")
 
 ## Completed Recipe
-(https://user-images.githubusercontent.com/21227322/30912713-abb48424-a35b-11e7-88f9-dccc7541ac7a.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912713-abb48424-a35b-11e7-88f9-dccc7541ac7a.jpeg "Screen7")
 
 ## Trello
-(https://user-images.githubusercontent.com/21227322/30912715-ae54aace-a35b-11e7-935c-b653b0bdd4a3.jpeg)
+![alt text](https://user-images.githubusercontent.com/21227322/30912715-ae54aace-a35b-11e7-935c-b653b0bdd4a3.jpeg "Screen8")
