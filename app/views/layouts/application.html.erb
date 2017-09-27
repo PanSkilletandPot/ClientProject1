@@ -6,31 +6,40 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <!-- Latest compiled and minified CSS Bootstrap 3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
-    <div>
-      <ul>
-        <li>
-          <%= link_to "Home", {:controller => "recipes", :action=> "index"}, :method => :get %>
-        </li>
-        <li>
-          <%= link_to "New Recipes", {:controller => "recipes", :action=> "new"}, :method => :get %>
-        </li>
-        <% if session[:user_id] %>
-          <li>
-            <%= link_to "logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
-          </li>
-          <li>
-            <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/recipes">Pan Skillet & Pot</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home", {:controller => "recipes", :action=> "index"}, :method => :get %></li>
+          <li><%= link_to "Category", {:controller => "recipes", :action=> "index"}, :method => :get %></li>
+          <% if session[:user_id] %>
+            <li>
+              <%= link_to "Add Recipe", {:controller => "recipes", :action=> "new"}, :method => :get %> 
+            </li>
+            <li>
+              <%= link_to "My Recipes", user_path(session[:user_id]) %>
+            </li>
+            <li>
+              <%= link_to "Logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
+            </li>
+            <li>
+              <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

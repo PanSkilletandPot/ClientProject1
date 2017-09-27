@@ -1,4 +1,4 @@
-<div class='recipe'>
+<div class='container-fluid recipe'>
   <div id='heading'>
     <h1><%= @recipe.recipe_name %></h1>
     <h2><%= @recipe.category %></h2>
@@ -7,8 +7,12 @@
     prep time: <%= @recipe.prep_time %> <br>
     instructions: <%= @recipe.instructions %>
   </div>
+  <% if current_user && current_user.id == @recipe.user_id %>
+    <%= link_to "Edit", edit_recipe_path(@recipe) %>
+    <%= link_to "Delete", @recipe, {method: :delete, data: { confirm: 'Are you sure?' }} %>
+  <% end %>
 </div>
-<div class='reviews'>
+<div class='container-fluid reviews'>
 
 <% if logged_in? %>
   <h3> Write a review </h3>
@@ -27,6 +31,7 @@
   <ul>
   <% @reviews.each do |review| %>
     <li>Reviewer: <%= review.user.username %><br></li>
+    <li>Rating: <%= review.rating %><br></li>
     <li>Body: <%= review.body %></li></br>
   <% end %>
   </ul>

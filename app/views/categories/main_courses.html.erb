@@ -1,8 +1,10 @@
+<div class="container-fluid">
 <h1> Main Courses </h1>
-  <ul>
-      <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'Main' %>
-        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
-      <% end %>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.category == 'Main' %>
+      <li><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></li>
     <% end %>
-  </ul>
+  <% end %>
+</ul>
+</div>
