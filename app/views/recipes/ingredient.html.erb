@@ -27,5 +27,5 @@
   <%= form.hidden_field :recipe_id, :value => @recipe.id %>
 
   <%= form.submit %>
-  <%= link_to "Done", {:controller => "recipes", :action=> "index"}, :method => :get %>
+  <%= link_to "Done", {:controller => "recipes", :action=> "show", }, :id => @recipe.id %>
 <% end %>
