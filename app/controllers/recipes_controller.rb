@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @review = Review.new(review_params)
     @review.save
-    render 'index'
+    redirect_to action: 'show', id: @review.recipe_id
   end
 
   def create
