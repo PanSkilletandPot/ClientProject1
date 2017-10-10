@@ -1,23 +1,27 @@
 <div class="container-fluid">
-  <h3>Register today to start using Pan, Skillet and Pot</h3>
-  <%= form_for(@user) do |f| %>
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-    </div>
+  <h3 class="recipe_spacing">Register</h3>
+  <div class="outer_border">
+    <div class="category_list_container">
+      <%= form_for(@user) do |f| %>
+        <div class="field">
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
 
-    <div>
-      <%= f.submit %>
+        <div>
+          <%= f.submit :class => "form_button" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>

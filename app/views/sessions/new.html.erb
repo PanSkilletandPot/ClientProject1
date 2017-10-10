@@ -1,18 +1,24 @@
 <div class="container-fluid">
-  <h3>Login to start using Pan, Skillet and Pot</h3>
-  <%= form_tag :action => :create, local: true do |f| %>
-    <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email %>
-    </div>
+  <h3 class="recipe_spacing">Login</h3>
+  <div class="outer_border">
+    <div class="category_list_container">
+        <div class="review-list">
+        <%= form_tag :action => :create, local: true do |f| %>
+          <div class="field">
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+          </div>
 
-    <div class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-    </div>
+          <div class="field">
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+          </div>
 
-    <div>
-      <%= submit_tag 'Login' %>
+          <div>
+            <%= submit_tag 'Login', :class => "form_button" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>
