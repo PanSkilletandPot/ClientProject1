@@ -1,23 +1,27 @@
-Edit Recipe Page
-<%= form_with model: @recipe, local: true do |form| %>
-  <p>
-    <%= form.label :recipe_name %><br>
-    <%= form.text_field :recipe_name %>
-  </p>
-  <p>
-    <%= form.label :category %><br>
-    <%= form.select :category, ['','App', 'Salad', 'Main', 'Dessert']%>
-  </p>
-  <p>
-    <%= form.label :prep_time %><br>
-    <%= form.text_area :prep_time %>
-  </p>
-  <p>
-    <%= form.label :instructions %><br>
-    <%= form.text_area :instructions %>
-  </p>
-  <%= form.hidden_field :user_id, :value => session[:user_id] %>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<h1 class="recipe_spacing">Edit Recipe</h1>
+<div class="outer_border">
+  <div class="category_list_container">
+    <%= form_with model: @recipe, local: true do |form| %>
+      <p>
+        <%= form.label :recipe_name %><br>
+        <%= form.text_field :recipe_name %>
+      </p>
+      <p>
+        <%= form.label :category %><br>
+        <%= form.select :category, ['','App', 'Salad', 'Main', 'Dessert']%>
+      </p>
+      <p>
+        <%= form.label :prep_time %><br>
+        <%= form.text_area :prep_time %>
+      </p>
+      <p>
+        <%= form.label :instructions %><br>
+        <%= form.text_area :instructions %>
+      </p>
+      <%= form.hidden_field :user_id, :value => session[:user_id] %>
+      <p>
+        <%= form.submit :class => "form_button"%>
+      </p>
+    <% end %>
+  </div>
+</div>
