@@ -19,7 +19,7 @@ Finally, the user can view a recipe on the specific recipe show page which show 
 * CSS
 * Bootstrap
 
-## Screenshots
+## Visual Overview
 
 ![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/pan-skillet-pot.png?raw=true "Home Screen")
 
