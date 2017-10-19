@@ -1,9 +1,15 @@
-<h2>Welcome <%= @user.username %></h2>
-<% if @user.recipes %>
-  <p>Here are the recipes you have created:</p>
-  <% @user.recipes.each do |recipe| %>
-    <ul>
-      <li><%= link_to recipe.recipe_name, recipe %></li>
-    </ul>
-  <% end %>
-<% end %>
+<div class="container-fluid">
+  <h2 class="recipe_spacing"> <%= @user.username.capitalize %>'s Profile</h2>
+  <div class="outer_border">
+    <div class="category_list_container">
+      <% if @user.recipes %>
+        <p class="section_title">Here are the recipes you have created:</p>
+        <% @user.recipes.each do |recipe| %>
+          <ul class="list-without-bullet">
+            <li><%= link_to recipe.recipe_name, recipe, :class => "recipe_link" %></li>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

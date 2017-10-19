@@ -1,29 +1,33 @@
-<h1>Recipe new</h1>
-<%= form_with model: @recipe, local: true do |form| %>
+<div class="container-fluid">
+  <h1 class="recipe_spacing">Recipe new</h1>
+  <div class="outer_border">
+    <div class="category_list_container">
+      <%= form_with model: @recipe, local: true do |form| %>
 
-  <p>
-    <%= form.label :recipe_name %><br>
-    <%= form.text_field :recipe_name %>
-  </p>
+        <p>
+          <%= form.label :recipe_name, :class => "recipe_link" %><br>
+          <%= form.text_field :recipe_name %>
+        </p>
+        <p>
+          <%= form.label :category, :class => "recipe_link" %><br>
+          <%= form.select :category, ['','App', 'Salad', 'Main', 'Dessert']%>
+        </p>
 
-  <p>
-    <%= form.label :category %><br>
-    <%= form.select :category, ['','App', 'Salad', 'Main', 'Dessert']%>
-  </p>
+        <p>
+          <%= form.label :prep_time, :class => "recipe_link" %><br>
+          <%= form.number_field :prep_time %>
+        </p>
 
-  <p>
-    <%= form.label :prep_time %><br>
-    <%= form.text_area :prep_time %>
-  </p>
+        <p>
+          <%= form.label :instructions, :class => "recipe_link" %><br>
+          <%= form.text_area :instructions %>
+        </p>
 
-  <p>
-    <%= form.label :instructions %><br>
-    <%= form.text_area :instructions %>
-  </p>
-
-  <%= form.hidden_field :user_id, :value => session[:user_id] %>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
+        <%= form.hidden_field :user_id, :value => session[:user_id] %>
+        <p>
+          <%= form.submit :class => "form_button" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

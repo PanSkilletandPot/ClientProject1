@@ -1,0 +1,65 @@
+.category_list_container {
+  background-color: #CBBC97;
+  border-radius: 5px;
+  padding: 5% 10% 5% 10%;
+  text-align: center;
+  border:solid;
+  border-width:8px;
+  border-color: #A9BCC2;
+}
+
+.list-without-bullet {
+  list-style-type:none;
+}
+
+.background {
+  background-color: #A9BCC2;
+}
+
+.no-border {
+  border:none;
+}
+
+.link_title {
+  font-size:250%;
+  text-align:left !important;
+  color:#333333;
+}
+.align-left {
+  text-align:left;
+}
+.recipe_link {
+  font-size:150%;
+  color:#333333;
+}
+.outer_border {
+  background-color: #CBBC97;
+  padding:1%;
+  margin: 3% 10% 3% 10%;
+  box-shadow: 5px 5px 24px rgba(0, 0, 0, .75);
+  border-radius: 5px;
+}
+.recipe_spacing {
+  margin-left:10%;
+}
+.form_header {
+  font-size:150
+}
+.form_button {
+  background-color:#81979B;
+  border-radius:5px;
+  color:#333333;
+  padding:0.5%;
+  margin: 1% 0.5% 0.5% 0.5%;
+}
+.review-list{
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+.section_title {
+  font-size:200%;
+  text-align:center;
+}
+
