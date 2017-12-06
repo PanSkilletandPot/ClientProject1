@@ -1,54 +1,67 @@
-<div class="container-fluid background" id='recipe_index'>
-<h1 class="recipe_spacing"> Recipes </h1>
-<div class="outer_border">
-<div class="category_list_container">
-<div>
-  <div class="align-left">
-    <%= link_to "Appetizer", appetizers_path, :class => "link_title" %>
-  </div>
-  <ul class="list-without-bullet">
-    <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'App'%>
-        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
-<div>
-  <div class="align-left">
-      <%= link_to "Salad", salads_path, :class => "link_title" %>
-  </div>
-  <ul class="list-without-bullet">
-      <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'Salad'%>
-        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-  </div>
-  <div>
-    <div class="align-left">
-      <%= link_to "Main Courses", main_courses_path, :class => "link_title" %>
+<main class="background" id='recipe_index'>
+  <section>
+    <h2 class="recipe_spacing"> Recipes </h2>
+  </section>
+  <Section class="menu-container">
+    <div class="menu-column">
+      <section class="course-wrapper">
+        <header>
+          <%= link_to "Appetizer", appetizers_path, :class => "link_title" %>
+        </header>
+        <article>
+          <ul class="list-without-bullet">
+            <% @recipes.each do |recipe| %>
+              <% if recipe.category == 'App'%>
+                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
+              <% end %>
+            <% end %>
+          </ul>
+        </article>
+      </section>
+      <section class="course-wrapper">
+        <header>
+        <%= link_to "Salad", salads_path, :class => "link_title" %>
+        </header>
+        <article>
+          <ul class="list-without-bullet">
+            <% @recipes.each do |recipe| %>
+              <% if recipe.category == 'Salad'%>
+                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
+              <% end %>
+            <% end %>
+          </ul>
+        </article>
+      </section>
     </div>
-  <ul class="list-without-bullet">
-      <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'Main' %>
-        <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-  </div>
-  <div>
-    <div class="align-left">
-      <%= link_to "Desserts", desserts_path, :class => "link_title" %>
+    <div class="menu-column">
+      <section class="course-wrapper">
+        <header>
+          <%= link_to "Main Courses", main_courses_path, :class => "link_title" %>
+        </header>
+        <article>
+          <ul class="list-without-bullet">
+              <% @recipes.each do |recipe| %>
+              <% if recipe.category == 'Main' %>
+                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
+              <% end %>
+            <% end %>
+          </ul>
+        </article>
+      </section>
+      <section class="course-wrapper">
+        <header>
+        <%= link_to "Desserts", desserts_path, :class => "link_title" %>
+        </header>
+        <article>
+          <ul class="list-without-bullet">
+            <% @recipes.each do |recipe| %>
+              <% if recipe.category == 'Dessert' %>
+               <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
+              <% end %>
+            <% end %>
+          </ul>
+        </article>
+      </section>
     </div>
-  <ul class="list-without-bullet">
-    <% @recipes.each do |recipe| %>
-      <% if recipe.category == 'Dessert' %>
-       <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-  </div>
-</div>
-</div>
+  </section>
+</main>

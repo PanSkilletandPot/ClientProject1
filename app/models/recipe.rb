@@ -12,6 +12,10 @@ class Recipe < ApplicationRecord
   end
 
   def average_rating
-    rating_sum / number_of_reviews
+    if rating_sum == 0 || number_of_reviews == 0
+      return false
+    else
+      rating_sum / number_of_reviews
+    end
   end
 end
