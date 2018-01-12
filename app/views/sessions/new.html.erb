@@ -1,24 +1,32 @@
-<div class="container-fluid">
-  <h3 class="recipe_spacing">Login</h3>
-  <div class="outer_border">
-    <div class="category_list_container">
-        <div class="review-list">
-        <%= form_tag :action => :create, local: true do |f| %>
-          <div class="field">
-            <%= label_tag :email %>
-            <%= text_field_tag :email %>
-          </div>
-
-          <div class="field">
-            <%= label_tag :password %>
-            <%= password_field_tag :password %>
-          </div>
-
-          <div>
-            <%= submit_tag 'Login', :class => "form_button" %>
-          </div>
-        <% end %>
+<main>
+  <header>
+    <img class="header-img" src="<%= image_url('ingredients-back.jpg')%>"></img>
+    <article class="landing-header-content">
+    </article>
+  </header>
+  <section class="login-forn-section">
+    <header>
+      <div class="session-errors">
+        <%= render partial: "error_handling", locals: { errors: @errors } %>
       </div>
-    </div>
-  </div>
-</div>
+      <h3 class="session-header">Login</h3>
+    </header>
+    <article>
+      <%= form_tag :action => :create, local: true do |f| %>
+        <div class="field">
+          <%= label_tag :email %><br>
+          <%= text_field_tag :email %>
+        </div>
+
+        <div class="field">
+          <%= label_tag :password %><br>
+          <%= password_field_tag :password %>
+        </div>
+
+        <div class="session-form-button">
+          <%= submit_tag 'Login', :class => "form_button" %>
+        </div>
+      <% end %>
+    </article>
+  </section>
+</main>

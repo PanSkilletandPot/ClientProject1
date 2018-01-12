@@ -1,0 +1,26 @@
+<%= form_with model: @recipe, local: true, :class => "recipe-form" do |form| %>
+        <div>
+          <%= form.label :recipe_name %><br>
+          <%= form.text_field :recipe_name %>
+        </div>
+        <div>
+          <%= form.label :category %><br>
+          <%= form.select :category, ['','Appetizer', 'Salad', 'Entree', 'Dessert'], :class => 'recipe-select'%>
+        </div>
+        <div>
+          <%= form.label :prep_time %><br>
+          <%= form.number_field :prep_time %>
+        </div>
+        <div class="text-area-grid">
+          <%= form.label :instructions %><br>
+          <%= form.text_area :instructions, size: "50x10", :class => "recipe-form-text-area" %>
+        </div>
+        <div>
+          <%= form.label :avatar %><br>
+          <%= form.file_field :avatar, :class => "recipe-form-file" %>
+        </div>
+        <%= form.hidden_field :user_id, :value => session[:user_id] %>
+        <div class="recipe-form-button">
+          <%= form.submit :class => "form_button" %>
+        </div>
+      <% end %>

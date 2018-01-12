@@ -5,17 +5,16 @@ Rails.application.routes.draw do
 
   delete '/sessions/' => 'sessions#destroy'
 
-  post '/recipes/:id/reviews' => 'recipes#reviews', as: 'new_review'
+  post '/reviews/:id' => 'reviews#create'
 
   get '/recipes/:id/ingredients' => 'recipes#ingredient'
   post '/recipes/:id/ingredients' => 'recipes#create_ingredients'
+  delete '/ingredients/:id' => 'recipes#destroy_ingredients'
 
 
   #category
-  get "/categories/appetizers", to: "categories#appetizers", as: "appetizers"
-  get "/categories/salads", to: "categories#salads", as: "salads"
-  get "/categories/main-courses", to: "categories#main_courses", as: "main-courses"
-  get "/categories/desserts", to: "categories#desserts", as: "desserts"
-
+  get 'recipes/category/:category' => 'recipes#category'
+  get 'categories/:category' => 'categories#show'
+  
   root "recipes#index"
 end

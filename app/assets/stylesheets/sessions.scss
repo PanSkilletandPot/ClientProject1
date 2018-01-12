@@ -1,3 +1,28 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.login-forn-section{
+	padding: 15vh 25% 0;
+	margin: 0 10% 0;
+	height: 85vh;
+	font-size: 30px;
+	background-color: rgba(203, 188, 151, 0.9);
+}
+.session-form-button input{
+	font-size: 30px;
+    padding: 5px 30px;
+    margin: 20px 0;
+    font-family: 'Damion', cursive;
+    border-color: black;
+}
+.session-header{
+	font-size:50px;
+	margin: 15px 0;
+}
+.session-errors{
+	color:red;
+	font-size:20px;
+	position: absolute;
+	top:22%;
+    right: 25%;
+}

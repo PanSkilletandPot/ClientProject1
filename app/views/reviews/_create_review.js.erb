@@ -1,0 +1,7 @@
+$( document ).ready(function() {
+	$(".no-posts-sign").remove();
+	$(".review-error-msg").remove();
+    $(".review-text-area textarea").val('');
+    $("select").val(1)
+	$(".review-window").append("<%= j render partial: 'review_item', locals: {review: @review} %>")
+});
