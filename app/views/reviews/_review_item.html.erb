@@ -1,0 +1,5 @@
+<ul class="review-display-grid">
+	<li class="review-display-name"><h3>Reviewer: </h3><span><%=link_to review.user.username, controller: "users", action: "show" %></span></li>
+	<li><h3>Rating: </h3><span><%= review.rating %></span></li>
+	<li class="review-display-body"><h3>Body: </h3><span><%= review.body %></span></li>
+</ul>

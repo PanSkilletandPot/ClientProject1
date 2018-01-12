@@ -1,0 +1,12 @@
+<section class="course-wrapper">
+	<header>
+	  <%= link_to category, { :controller => "recipes", :action => "category", :category => category }, :class => "link_title" %>
+	</header>
+	<article>
+	  <ul class="list-without-bullet">
+	    <% recipes_list.each do |recipe| %>
+	      <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link menu-recipe" %><br><%= recipe.average_rating > 0 ? recipe.average_rating.to_s + " Stars" : "N/A" %></li>
+	    <% end %>
+	  </ul>
+	</article>
+</section>

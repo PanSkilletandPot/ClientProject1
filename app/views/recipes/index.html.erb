@@ -1,67 +1,18 @@
-<main class="background" id='recipe_index'>
+<main class="landing-main-container">
   <section>
-    <h2 class="recipe_spacing"> Recipes </h2>
+    <%= render partial: "img_header" %>
+    <article class="index-header-content">
+      <h2> Pan Skillet & Pot takes a new trist on the typical restaruant Experience by crowd sourcing its menu for a unique taste every night </h2>
+    </article>  
   </section>
   <Section class="menu-container">
     <div class="menu-column">
-      <section class="course-wrapper">
-        <header>
-          <%= link_to "Appetizer", appetizers_path, :class => "link_title" %>
-        </header>
-        <article>
-          <ul class="list-without-bullet">
-            <% @recipes.each do |recipe| %>
-              <% if recipe.category == 'App'%>
-                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
-              <% end %>
-            <% end %>
-          </ul>
-        </article>
-      </section>
-      <section class="course-wrapper">
-        <header>
-        <%= link_to "Salad", salads_path, :class => "link_title" %>
-        </header>
-        <article>
-          <ul class="list-without-bullet">
-            <% @recipes.each do |recipe| %>
-              <% if recipe.category == 'Salad'%>
-                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
-              <% end %>
-            <% end %>
-          </ul>
-        </article>
-      </section>
+      <%= render partial: "menu_category_section", locals: {recipes_list: @appetizers, category: "Appetizer"} %>
+      <%= render partial: "menu_category_section", locals: {recipes_list: @salads, category: "Salad"} %>
     </div>
     <div class="menu-column">
-      <section class="course-wrapper">
-        <header>
-          <%= link_to "Main Courses", main_courses_path, :class => "link_title" %>
-        </header>
-        <article>
-          <ul class="list-without-bullet">
-              <% @recipes.each do |recipe| %>
-              <% if recipe.category == 'Main' %>
-                <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
-              <% end %>
-            <% end %>
-          </ul>
-        </article>
-      </section>
-      <section class="course-wrapper">
-        <header>
-        <%= link_to "Desserts", desserts_path, :class => "link_title" %>
-        </header>
-        <article>
-          <ul class="list-without-bullet">
-            <% @recipes.each do |recipe| %>
-              <% if recipe.category == 'Dessert' %>
-               <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link" %><br><%= recipe.average_rating ? recipe.average_rating : "N/A" %> Stars</li>
-              <% end %>
-            <% end %>
-          </ul>
-        </article>
-      </section>
+      <%= render partial: "menu_category_section", locals: {recipes_list: @mains, category: "Entree"} %>
+      <%= render partial: "menu_category_section", locals: {recipes_list: @desserts, category: "Dessert"} %>
     </div>
   </section>
 </main>

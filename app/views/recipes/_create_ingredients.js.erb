@@ -1,0 +1,6 @@
+$( document ).ready(function() {
+	$(".error-div").remove();
+	$("#enter-ingredients").remove();
+    $(".ingredients-form-label input[type='text']").val('');
+    $("#ingredients-display-list").append("<%= j render partial: 'ingredient_list_item', locals: {ingredient: @ingredient }%>")
+});

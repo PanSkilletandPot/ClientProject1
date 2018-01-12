@@ -1,11 +1,11 @@
 class CreateRecipes < ActiveRecord::Migration[5.1]
   def change
     create_table :recipes do |t|
-      t.string :recipe_name, null: false
-      t.string :category, null: false
-      t.string :prep_time, null: false
-      t.string :instructions, null: false
-      t.references :user, foreign_key: true, index: true
+      t.string :recipe_name, presence: true
+      t.string :category, presence: true
+      t.string :prep_time, presence: true
+      t.string :instructions, presence: true
+      t.references :user, foreign_key: true, index: true, presence: true
 
       t.timestamps
     end
