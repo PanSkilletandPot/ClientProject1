@@ -9,16 +9,15 @@ class ReviewsController < ApplicationController
 	    @review = Review.new(review_params)
 	    if @review.save
   	    respond_to do |format|
-  		    # format.html { redirect_to action: 'show', id: @review.recipe_id }
   	      format.js { render partial: "create_review" }
-  	    end  
-      else 
+  	    end
+      else
       @errors = @review.errors.full_messages
         respond_to do |format|
           # format.html { redirect_to action: 'show', id: @review.recipe_id }
           format.js { render partial: "review_create_error", locals:{ errors: @errors} }
-        end  
-      end   
+        end
+      end
     end
 
     private
