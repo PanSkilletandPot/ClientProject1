@@ -30,7 +30,7 @@
 }
 body{
   margin:0;
-  font-family: 'Damion', cursive;
+  font-family: 'Courgette', cursive;
 }
 /*revised*/
 nav{
@@ -41,10 +41,8 @@ nav{
   z-index:2;
   width:100vw;
   height:75px;
-  padding:0 10px;
   font-size:30px;
   background: linear-gradient(rgba(0,0,0,1) 40%, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0));
-  /*background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))*/
 }
 nav a{
   color:white;
@@ -76,27 +74,62 @@ nav li{
   flex:1;
   margin: 20px 0 0 0;
   float: right;
+  z-index: 6;
+  position: absolute;
+  right: 0px;
 }
 .nav-pages{
   flex:2;
   margin:0;
 }
-/*.background-cover{
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.5);
-}*/
 .landing-header-content{
 position:fixed;
 top:0;
 left:0;
 z-index: -1;
 background-color: rgba(0, 0, 0, 0.7);
-/*background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(203,188,151, 1));*/
 width: 100vw;
 height: 200vh;
-/*color:white;*/
+}
+#drop-down-icon{
+  color:white;
+  margin: 30px 0 0 40px;
+  display:none;
+  font-size:30px;
+  font-size:25px;
+}
+#drop-down-ul{
+    display:none;
+    flex-direction: column;
+    background-color: black;
+    padding: 50px 0 0 0;
+    width: 100vw;
+    margin-top: -35px;
+    height: 0px;
+    overflow: hidden;
+    text-align: right;
+}
+#drop-down-ul li{
+  padding: 5px 50px 20px 0;
+}
+#psp-logo{
+  margin-left: 35px;
+}
+.nav-slide-down{
+  display:flex !important;
+  height:160px !important;
 }
 
+@media screen and (max-width: 725px) {
+  .nav-header{
+    display:none;
+  }
+  #drop-down-icon{
+  color:white;
+  display:initial;
+  }
+
+}
 
 
 

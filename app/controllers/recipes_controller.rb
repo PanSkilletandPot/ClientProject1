@@ -40,7 +40,6 @@ class RecipesController < ApplicationController
   def update
     require_user
     @recipe = Recipe.find(params[:id])
-    # if current_user.id == @recipe.user_id
     @recipe.assign_attributes(recipe_params)
     if @recipe.save
           redirect_to :action => 'ingredient'
@@ -60,7 +59,7 @@ class RecipesController < ApplicationController
   def category
     @type = params[:category]
     @recipes = Recipe.select { |recipe| recipe.category == @type }
-  end  
+  end
 
   def ingredient
     require_user
@@ -80,17 +79,14 @@ class RecipesController < ApplicationController
         format.js { render partial: "create_ingredients" }
       end
     else
-      errors = @ingredient.errors.full_messages 
+      errors = @ingredient.errors.full_messages
       respond_to do |format|
-        format.html { 
-          render 'ingredient' 
+        format.html {
+          render 'ingredient'
         }
         format.js { render partial: "create_error" }
       end
-      # @errors = @ingredient.errors.full_messages 
-      # render 'ingredient'
-      # redirect_to action: "ingredient", id: @recipe.id
-    end   
+    end
   end
 
   def destroy_ingredients
@@ -100,7 +96,7 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
       format.js {render partial: "destroy_ingredients"}
-    end  
+    end
   end
 
 
@@ -108,10 +104,6 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:recipe_name, :category, :ingredients, :prep_time, :instructions, :user_id, :avatar)
     end
-
-    # def review_params
-    #   params.require(:review).permit(:rating, :body, :user_id, :recipe_id)
-    # end
 
     def ingredient_params
       params.require(:ingredient).permit(:ingredient, :recipe_id)
