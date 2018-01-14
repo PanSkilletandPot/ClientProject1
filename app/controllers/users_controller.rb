@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # require_user
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -19,12 +18,6 @@ class UsersController < ApplicationController
   def show
     require_user
     @user = User.find(params[:id])
-    # if @user.id == session[:user_id]
-    #   render 'show'
-    # else
-    #   @errors = ['Error, not authororized']
-    #   redirect_with_msg = true
-    # end
   end
 
   private
