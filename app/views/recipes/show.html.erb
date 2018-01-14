@@ -1,60 +1,83 @@
-<div class='container-fluid recipe'>
-  <h1 class="recipe_spacing"><%= @recipe.recipe_name %></h1>
-  <div class="outer_border">
-    <div class="category_list_container recipe_link">
-      <div id='heading'>
-        <h2><%= @recipe.category %></h2>
-      </div>
+<main>
+  <%= render partial: "img_header" %>
+  <section class="category_list_container show-grid-containter">
+    <header>
+      <h2 class="show-title"><%= @recipe.recipe_name %></h2>
+    </header>
+    <article class="show-img">
+      <%= image_tag @recipe.avatar.url, :class => "recipe-show-image" %>
+    </article>
+    <article class="recipe-show-header-info">
+      <h3><%= @recipe.category %></h3>
       <div>
+        <span><%=link_to @recipe.user.username, controller: "users", action: "show" %></span></span></div>
+      <div>
+        <span><%= @recipe.calculate_prep_time %></span>
+      </div>
         <% if @recipe.reviews.length > 0 %>
-        <%= @recipe.average_rating %> / 5 Star Average
+          <p><%= @recipe.average_rating %>/5 Stars</p>
+        <%else%>
+          <p>Not Yet Rated</p>
         <% end %>
-      </div>
-      <div id='recipe_body'>
-        Prep Time: <%= @recipe.prep_time %> <br>
-        Instructions: <%= @recipe.instructions %>
-        <div>
-        Ingredients:
-        <ul class="list-without-bullet">
-      <% @recipe.ingredients.each do |ingredient| %>
-        <li class="">:<%= ingredient.ingredient %><br></li>
-      <% end %>
+    </article>
+    <article class="show-instructions">
+      <h3>Instructions:</h3>
+      <p><%= @recipe.instructions %></p>
+    </article>
+    <article class="show-ingredients">
+      <h3>Ingredients:</h3>
+      <ul class="list-without-bullet show-ingridients-scroll">
+        <% @recipe.ingredients.each do |ingredient| %>
+          <li class=""><span>: <%= ingredient.ingredient %><span><br></li>
+        <% end %>
       </ul>
-        </div>
-      </div>
+    </article>
+    <article class="show-buttons">
       <% if current_user && current_user.id == @recipe.user_id %>
-        <%= link_to "Edit", edit_recipe_path(@recipe), :class => "form_button" %>
-        <%= link_to "Delete", @recipe, {method: :delete, class: :form_button, data: { confirm: 'Are you sure?' }} %>
+      <%= link_to "Edit", edit_recipe_path(@recipe), :class => "show-form-button" %>
+      <%= link_to "Delete", @recipe, {method: :delete, :class =>"show-form-button", data: { confirm: 'Are you sure?' }} %>
       <% end %>
-    </div>
-  </div>
-</div>
-<div class='container-fluid reviews'>
-  <div class="outer_border">
-    <div class="category_list_container">
+    </article>
+  </section>
+  <section class="category_list_container recipe-show-gutter remove-top">
+    <article>
+      <header>
+        <h3 class="review-h3"> Reviews </h3>
+      </header>
+      <article class="review-window">
+        <% if @reviews.length > 0 %>
+          <% @reviews.each do |review| %>
+             <%= render partial: "review_item", locals: {review: review} %>
+          <% end %>
+        <% else %>
+          <h4 class="no-posts-sign">Be The First to Review this Recipe!</h4>
+        <% end %>
+      </article>
+    </article>
     <% if logged_in? %>
-    <h3> Write a review </h3>
-    <div class="list-without-bullet align-left review-list">
-        <%= form_for :review, url: { :controller => "recipes", action: "reviews" } do |f| %>
-          <%= f.label :rating %><br>
-          <%= f.select :rating, [ 0,1,2,3,4,5 ]%>
-          <%= f.label :body %><br>
-          <%= f.text_area :body%>
-          <%= f.hidden_field :recipe_id, :value => @recipe.id%>
-          <%= f.hidden_field :user_id, :value => @user_id%>
-          <%= f.submit :class => "form_button" %>
-      <% end %>
+      <article class="write-review">
+        <header class="enter-review-section">
+          <h3 class="review-h3"> Write a Review </h3>
+          <div id="review-error-display"></div>
+        </header>
+          <article class="show-review-grid">
+            <%= form_for :review, remote: true, url: { :controller => "reviews", action: "create" } do |f| %>
+              <div>
+                <%= f.label :rating %>
+                <%= f.select :rating, [ 1,2,3,4,5 ]%>
+              </div>
+              <div class="review-text-area">
+                <%= f.label :body %><br>
+                <%= f.text_area :body%>
+              </div>
+              <%= f.hidden_field :recipe_id, :value => @recipe.id%>
+              <%= f.hidden_field :user_id, :value => @user_id%>
+              <div class="review-submit-button">
+                <%= f.submit :class => "form_button" %>
+              </div>
+          <% end %>
+        </article>
+      </article>
     <% end %>
-  </div>
-
-    <h3> Reviews </h3>
-      <ul class="list-without-bullet align-left review-list recipe_link">
-      <% @reviews.each do |review| %>
-        <li class="">Reviewer: <%= review.user.username %><br></li>
-        <li>Rating: <%= review.rating %><br></li>
-        <li>Body: <%= review.body %></li></br>
-      <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
+  </section>
+</main>

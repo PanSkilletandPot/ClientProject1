@@ -1,3 +1,117 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*new user*/
+.sign-in-grid form{
+	font-size:50px;
+	margin:auto;
+}
+.field input,
+.user-form-button input{
+	width:100%;
+	height: 50px;
+	border-radius: 5px;
+    border: 1px solid black;
+	font-size: 35px;
+}
+.user-form-button input{
+}
+.login-header{
+	color:red;
+	font-size:20px;
+	position: absolute;
+    right: 16%;
+}
+/*User Profile */
+.users-info-grid{
+	display: grid;
+	grid-template-columns:50% 50%;
+	grid-template-row:33% 33% 33%;
+	margin: 0 0 45px 0;
+	padding: 9vh 10% 5% 10%;
+	border-radius:5px;
+	background-color: rgba(203, 188, 151, 0.9);
+}
+.users-info-grid h2{
+	margin: 0 0 2% 0;
+  font-size:24px !important;
+}
+.users-info-grid header{
+	font-size:50px;
+	grid-column: 1 / span 2;
+	grid-row: 1;
+}
+.user-show-recipes{
+	padding: 5% 10%;
+    margin: 0;
+    font-size: 40px;
+    height: 250px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5px;
+    overflow: scroll;
+}
+.user-show-recipes li{
+	line-height:40px
+}
+.user-recipe-title{
+	font-size:35px;
+	margin: 0 0 7% 0;
+	text-align:center;
+}
+.stats{
+	grid-column: 2;
+	grid-row: 2 / span 2;
+	font-size:20px;
+	line-height: 40px;
+	text-align:right;
+}
+.best{
+	font-size:20px;
+	line-height: 35px;
+}
+.best-margin{
+	margin:30px 0 0 0
+}
+.show-label{
+	font-size: 30px;
+}
+.show-recipe-stars{
+	float:right;
+	font-size: 25px;
+}
+.new-user-form-section{
+	padding: 15vh 17% 0;
+	margin: 0 10% 0;
+	height: 85vh;
+	min-height:85%;
+	font-size: 30px;
+	background-color: rgba(203, 188, 151, 0.9);
+}
+.new-user-form-button input{
+	font-size: 30px;
+    padding: 5px 30px;
+    margin: 20px 0;
+    font-family: 'Courgette', cursive;
+    border-color:black;
+}
+.new-user-header{
+	font-size:50px;
+	margin: 15px 0;
+}
+.user-show-container{
+	padding: 0 10%;
+}
+.user-recipe-display{
+	background-color: rgba(203, 188, 151, 0.9);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 9vh 10% 5% 10%;
+}
+.field input{
+  font-family: 'Courgette', cursive;
+}
+
+.u-show-head{
+  font-size: 55px !important;
+  margin: 0;
+}

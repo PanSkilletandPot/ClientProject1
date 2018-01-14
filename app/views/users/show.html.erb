@@ -1,15 +1,36 @@
-<div class="container-fluid">
-  <h2 class="recipe_spacing"> <%= @user.username.capitalize %>'s Profile</h2>
-  <div class="outer_border">
-    <div class="category_list_container">
-      <% if @user.recipes %>
-        <p class="section_title">Here are the recipes you have created:</p>
-        <% @user.recipes.each do |recipe| %>
-          <ul class="list-without-bullet">
-            <li><%= link_to recipe.recipe_name, recipe, :class => "recipe_link" %></li>
-          </ul>
-        <% end %>
-      <% end %>
+<main class="user-show-container">
+  <%= render partial: "img_header" %>
+  <section class="users-info-grid">
+    <header>
+      <h1 class="recipe_spacing u-show-head"> <%= @user.username.capitalize %>'s Profile</h1>
+    </header>
+    <div class="best">
+      <h2><span class="show-label">Your Best Recipe:</span><br><span class="user-content"><%= @user.best_recipe ? @user.best_recipe.recipe_name : "N/A" %></span></h2>
     </div>
-  </div>
-</div>
+    <div class="best best-margin">
+      <h2><span class="show-label">Favorite Recipe:</span><br><span class="user-content"><%= @user.highest_rated_review ? @user.highest_rated_review.recipe.recipe_name : "N/A" %></span></h2>
+    </div>
+    <div class="stats">
+      <h2><span class="show-label">Recipes Contributed:</span> <span class="user-content"><%= @user.number_of_recipes_entered%></span></h2>
+      <h2><span class="show-label">Recipes Rated:</span> <span class="user-content"><%= @user.number_of_recipes_rated %></span></h2>
+      <h2><%= @user.user_activity_percentile%> of Active Users</h2>
+    </div>
+  </section>
+  <section>
+    <article class="user-recipe-display">
+      <h3 class="user-recipe-title">Here are the recipes you have created:</h3>
+      <% if @user.recipes %>
+        <ul class="list-without-bullet user-show-recipes">
+          <% @user.recipes.each do |recipe| %>
+            <li>
+              <%= link_to recipe.recipe_name, recipe, :class => "recipe_link" %>
+              <span class="show-recipe-stars"><%= recipe.average_rating > 0 ? recipe.average_rating.to_s + " Stars": "N/A" %></span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h4>You have not submitted any Recipes</h4>
+      <% end %>
+    </article>
+  </section>
+</main>

@@ -1,27 +1,31 @@
-<div class="container-fluid">
-  <h3 class="recipe_spacing">Register</h3>
-  <div class="outer_border">
-    <div class="category_list_container">
+<main>
+  <%= render partial: "img_header" %>
+  <section class="new-user-form-section">
+    <header>
+      <div class="login-header">
+        <%= render partial: "error_handling", locals: { errors: @errors } %>
+      </div>
+      <h2 class="new-user-header">User Register</h2>
+    <header>
+    <article>
       <%= form_for(@user) do |f| %>
         <div class="field">
-          <%= f.label :username %>
+          <%= f.label :username %><br>
           <%= f.text_field :username %>
         </div>
-
         <div class="field">
-          <%= f.label :email %>
-          <%= f.text_field :email %>
+          <%= f.label :email %><br>
+          <%= f.email_field :email %>
         </div>
-
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password %><br>
           <%= f.password_field :password %>
         </div>
 
-        <div>
+        <div class="new-user-form-button">
           <%= f.submit :class => "form_button" %>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
+    </article>
+  </section>
+</main>

@@ -3,49 +3,72 @@
   <head>
     <title>PanSkilletPot</title>
     <%= csrf_meta_tags %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <!-- Latest compiled and minified CSS Bootstrap 3-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <header>
-    <nav class="navbar navbar-default no-border">
-      <div class="container-fluid nav-color">
-        <div class="navbar-header">
-          <a class="navbar-brand nav-text" href="/recipes">Pan Skillet & Pot</a>
-        </div>
-        <% if session[:user_id] %>
-          <ul class="nav navbar-nav">
+  <body>
+    <header>
+      <nav>
+        <section>
+          <a id="drop-down-icon">Menu</a>
+          <article>
+            <ul id="drop-down-ul">
+              <li>
+                <%= link_to "Home", {:controller => "recipes", :action=> "index"}, :method => :get %>
+              </li>
+              <% if session[:user_id] %>
+              <li>
+                <%= link_to "Add Recipe", {:controller => "recipes", :action=> "new"}, :method => :get %>
+              </li>
+              <li>
+                <%= link_to "My Recipes", user_path(session[:user_id]) %>
+              </li>
+              <% else %>
+                <li>
+                  <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
+                </li>
+                <li>
+                  <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
+                </li>
+              <% end %>
+            </ul>
+          </article>
+        </section>
+        <section class="nav-header">
+          <a id="psp-logo" href="/recipes">Pan Skillet & Pot</a>
+            <% if session[:user_id] %>
+          <ul>
             <li>
-              <%= link_to "Add Recipe", {:controller => "recipes", :action=> "new"}, :method => :get, :class => "nav-text" %>
+              <%= link_to "Add Recipe", {:controller => "recipes", :action=> "new"}, :method => :get %>
             </li>
             <li>
-              <%= link_to "My Recipes", user_path(session[:user_id]), :class => "nav-text" %>
+              <%= link_to "My Recipes", user_path(session[:user_id]) %>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+        </section>
+          <ul class="logged-in">
             <li>
-              <%= link_to "Logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete, :class => "logout-button nav-text" %>
+              <%= link_to "Logout", {:controller => "sessions", :action=> "destroy"}, :method => :delete %>
             </li>
           </ul>
         <% else %>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="logged-out">
             <li>
-              <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get, :class => "nav-text" %>
+              <%= link_to "Sign in", {:controller => "sessions", :action=> "new"}, :method => :get %>
             </li>
             <li>
-              <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get, :class => "nav-text" %>
+              <%= link_to "Register", {:controller => "users", :action=> "new"}, :method => :get %>
             </li>
           </ul>
         <% end %>
-      </div>
-    </nav>
-    <div class="header">
-      <h1 class="header-img"></h1><div>
+      </nav>
     </header>
-    <body>
     <%= yield %>
   </body>
 </html>
