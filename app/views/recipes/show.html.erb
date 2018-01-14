@@ -28,7 +28,7 @@
       <h3>Ingredients:</h3>
       <ul class="list-without-bullet show-ingridients-scroll">
         <% @recipe.ingredients.each do |ingredient| %>
-          <li class=""><span>: <%= ingredient.ingredient %><span><br></li>
+          <li><span class="recipe-ingredient-list-item">: <%= ingredient.ingredient %></span><br></li>
         <% end %>
       </ul>
     </article>

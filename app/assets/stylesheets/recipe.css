@@ -311,6 +311,9 @@ min-height:91vh;
   width:100%;
   margin:auto;
 }
+.recipe-ingredient-list-item{
+  font-size: 0.7em !important;
+}
 .review-text-area{
   grid-column: 1 / span 2 ;
   grid-row: 1;
