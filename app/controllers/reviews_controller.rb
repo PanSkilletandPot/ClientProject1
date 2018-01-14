@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
       else
       @errors = @review.errors.full_messages
         respond_to do |format|
-          # format.html { redirect_to action: 'show', id: @review.recipe_id }
           format.js { render partial: "review_create_error", locals:{ errors: @errors} }
         end
       end
