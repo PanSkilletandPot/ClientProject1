@@ -268,7 +268,8 @@ min-height:91vh;
   font-size:25px;
 }
 .show-ingridients-scroll li{
-  line-height:30px;
+  line-height:20px;
+  margin: 0 0 15px 0;
 }
 .recipe-show-header-info div span{
   font-size:20px;
@@ -283,9 +284,9 @@ min-height:91vh;
   overflow: scroll;
 }
 .show-title{
-  font-size:60px;
+  font-size: 50px;
   margin: 15px 0 0 0;
-  line-height:75px;
+  line-height: 70px;
 }
 .show-img{
   grid-column: 1;
