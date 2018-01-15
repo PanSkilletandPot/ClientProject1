@@ -5,7 +5,7 @@
       <h1 class="recipe_spacing u-show-head"> <%= @user.username.capitalize %>'s Profile</h1>
     </header>
     <div class="best">
-      <h2><span class="show-label">Your Best Recipe:</span><br><span class="user-content"><%= @user.best_recipe ? @user.best_recipe.recipe_name : "N/A" %></span></h2>
+      <h2><span class="show-label">Best Recipe:</span><br><span class="user-content"><%= @user.best_recipe ? @user.best_recipe.recipe_name : "N/A" %></span></h2>
     </div>
     <div class="best best-margin">
       <h2><span class="show-label">Favorite Recipe:</span><br><span class="user-content"><%= @user.highest_rated_review ? @user.highest_rated_review.recipe.recipe_name : "N/A" %></span></h2>
@@ -18,7 +18,7 @@
   </section>
   <section>
     <article class="user-recipe-display">
-      <h3 class="user-recipe-title">Here are the recipes you have created:</h3>
+      <h3 class="user-recipe-title">Here are the recipes <%= @user.username %> had created:</h3>
       <% if @user.recipes %>
         <ul class="list-without-bullet user-show-recipes">
           <% @user.recipes.each do |recipe| %>

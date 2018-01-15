@@ -1,8 +1,7 @@
 <li id="ingredient-<%= ingredient.id%>">
-    <span><%= ingredient.ingredient %></span>
-    <%= button_to "Delete", { action: "destroy_ingredients",
+    <%= button_to "X", { action: "destroy_ingredients",
       id: ingredient.id }, :class => "ingredient-delete-button",
       method: :delete,
       data: { confirm: "Are you sure?" },
       remote: true
-    %>
+    %><span> <%= ingredient.ingredient %></span><span></span>

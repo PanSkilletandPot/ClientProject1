@@ -5,7 +5,7 @@
 	<article>
 	  <ul class="list-without-bullet">
 	    <% recipes_list.each do |recipe| %>
-	      <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link menu-recipe" %><br><%= recipe.average_rating > 0 ? recipe.average_rating.to_s + " Stars" : "N/A" %></li>
+	      <li><%= link_to recipe.recipe_name, recipe_path(recipe.id), :class => "recipe_link menu-recipe" %><br><span class="recipe-index-rating"><%= recipe.average_rating > 0 ? recipe.average_rating.to_s + " Stars" : "N/A" %><span></li>
 	    <% end %>
 	  </ul>
 	</article>

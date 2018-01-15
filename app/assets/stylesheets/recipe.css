@@ -9,6 +9,7 @@
 }
 .list-without-bullet {
   list-style-type:none;
+  padding-left:15px;
 }
 
 .background {
@@ -22,7 +23,7 @@
   margin: 3% 11%;
 }
 .menu-recipe{
-  font-size:30px !important;
+  font-size:27px !important;
 }
 .recipe_spacing {
   margin-left:10%;
@@ -56,7 +57,7 @@ a:hover{
   color:grey;
 }
 .recipe_link {
-  font-size:100%;
+  font-size:30px;
   color:#333333;
 }
 /*Recipe index*/
@@ -65,7 +66,9 @@ a:hover{
     color: white;
     font-size: 35px;
 }
-
+.recipe-index-rating{
+  font-size: 17px;
+}
 .menu-container {
   background-color: #CBBC97;
   padding: 75px 7%;
@@ -86,7 +89,7 @@ a:hover{
 }
 .menu-column article li{
   line-height: 30px;
-  padding: 10px 0;
+  padding: 20px 0 0 0;
   width: 200px;
 }
 .link_title {
@@ -231,7 +234,7 @@ min-height:91vh;
 .show-grid-containter h3,
 .show-grid-containter ul{
   margin:0;
-  font-size:1em;
+  font-size:0.9em;
 }
 .recipe-show-gutter{
   margin:0 10%;
@@ -253,10 +256,11 @@ min-height:91vh;
   list-style:none;
 }
 .recipe-show-header-info div{
-  line-height:30px;
+  line-height:25px;
 }
 .recipe-show-header-info p{
-  font-size:30px;
+  font-size:20px;
+  line-height: 35px;
 }
 .show-ingridients-scroll{
   overflow: scroll;
@@ -267,21 +271,21 @@ min-height:91vh;
   line-height:30px;
 }
 .recipe-show-header-info div span{
-  font-size:30px;
+  font-size:20px;
 }
 .show-instructions{
   grid-column: 1 / span 2;
   grid-row: 3;
 }
 .show-instructions p{
-  font-size:25px;
+  font-size:20px;
   height:100px;
   overflow: scroll;
 }
 .show-title{
-  font-size:70px;
-  margin:0;
-  line-height:100px;
+  font-size:60px;
+  margin: 15px 0 0 0;
+  line-height:75px;
 }
 .show-img{
   grid-column: 1;
@@ -312,7 +316,7 @@ min-height:91vh;
   margin:auto;
 }
 .recipe-ingredient-list-item{
-  font-size: 0.7em !important;
+  font-size: 0.6em !important;
 }
 .review-text-area{
   grid-column: 1 / span 2 ;
@@ -344,7 +348,7 @@ min-height:91vh;
   border-color:black;
 }
 .review-h3{
-  font-size:40px;
+  font-size:35px;
       margin: 0;
 }
 .no-posts-sign{
@@ -361,10 +365,10 @@ min-height:91vh;
 .review-display-grid h3{
   display:inline-block;
   margin:0;
-  font-size:30px;
+  font-size:25px;
 }
 .review-display-grid{
-  font-size:25px;
+  font-size:20px;
   padding: 0;
 }
 .review-display-body{
@@ -453,21 +457,25 @@ min-height:91vh;
   margin:0;
   height: 100px;
   overflow: scroll;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 25px;
+  list-style: none;
+  padding-left: 0;
 }
 .ingredients-added form {
   display:inline-block;
-  float: right;
+
 }
 .ingredients-added li{
-  line-height:30px;
+  line-height: 22px;
+  margin: 10px 0;
 }
 .ingredient-delete-button{
-  background-color: #667b7f;
+  background-color: red;
   border-color:black;
-  border-radius: 5px;
-  font-family: 'Courgette', cursive;
+  padding:1px !important;
+  border-radius: 3px;
+  /*font-family: 'Courgette', cursive;*/
   line-height: 14px;
   font-size: 15px;
   margin-right: 5px;
