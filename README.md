@@ -10,19 +10,20 @@ Finally, the user can view a recipe on the specific recipe show page which show 
 * Ruby on Rails
 * HTML
 * CSS
-* Bootstrap
+* jQuery
+* AJAX
 
-## Visual Overview
-## Homepage - Menu
+### Visual Overview
+### Homepage - Menu
 ![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.35.52%20PM.png "Home Screen")
-## Recipe Display
+### Recipe Display
 ![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.36.19%20PM.png "Recipe Show")
-## Add ingredients
+### Add ingredients
 ![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.37.46%20PM.png "Add Ingredients")
-## Review Recipes
+### Review Recipes
 ![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.44.43%20PM.png "Reviews")
-
+### Code Snippet
 ![alt text](https://user-images.githubusercontent.com/21227322/30912686-9580ba74-a35b-11e7-88e6-193e2b6ba9b3.jpeg "Screen1")
 
-## Trello
+### Trello
 ![alt text](https://user-images.githubusercontent.com/21227322/30912715-ae54aace-a35b-11e7-935c-b653b0bdd4a3.jpeg "Screen8")
