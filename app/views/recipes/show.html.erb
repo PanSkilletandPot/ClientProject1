@@ -10,11 +10,8 @@
     <article class="recipe-show-header-info">
       <span class="recipe-top-sub-header">Type: <span class="unbold"><%= @recipe.category %></span></span>
       <div>
-<<<<<<< HEAD
         <span class="recipe-top-sub-header">Creator: </span><span class="unbold"><%=link_to @recipe.user.username, controller: "users", action: "show", id: @recipe.user.id %></span></span></div>
-=======
         <span><%=link_to @recipe.user.username, controller: "users", action: "show", id: @recipe.user.id %></span></span></div>
->>>>>>> rico
       <div>
         <span><%= @recipe.calculate_prep_time %></span>
       </div>
