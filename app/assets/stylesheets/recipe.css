@@ -265,7 +265,7 @@ min-height:91vh;
 }
 .show-ingridients-scroll{
   overflow: scroll;
-  height: 296px;
+  height: 230px;
   font-size:25px;
 }
 .show-ingridients-scroll li{
