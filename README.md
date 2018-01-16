@@ -1,12 +1,5 @@
 # The Pan Skillet and Pot Grill
 
-## Contributors
-@KwakDesigns
-
-@sbrady11 
-
-@ed13f
-
 ## User Story
 
 A user comes to our site and registers via the registration page by entering a username, email and password.
@@ -21,7 +14,10 @@ Finally, the user can view a recipe on the specific recipe show page which show 
 
 ## Visual Overview
 
-![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/pan-skillet-pot.png?raw=true "Home Screen")
+![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.35.52%20PM.png "Home Screen")
+![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.36.19%20PM.png "Recipe Show")
+![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.37.46%20PM.png "Add Ingredients")
+![alt text](https://github.com/ed13f/Pan-Skillet-and-Pot/blob/master/Screen%20Shot%202018-01-15%20at%208.44.43%20PM.png "Reviews")
 
 ![alt text](https://user-images.githubusercontent.com/21227322/30912686-9580ba74-a35b-11e7-88e6-193e2b6ba9b3.jpeg "Screen1")
 
