@@ -54,7 +54,10 @@ a {
 }
 a:hover{
   text-decoration: none;
-  color:grey;
+  color:grey!important;
+}
+.category-diplay li a:hover{
+  /*color:grey !important;*/
 }
 .recipe_link {
   font-size:30px;
@@ -265,12 +268,15 @@ min-height:91vh;
 }
 .show-ingridients-scroll{
   overflow: scroll;
-  height: 230px;
+  height: 241px;
   font-size:25px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  margin-top:5px !important;
 }
 .show-ingridients-scroll li{
   line-height:20px;
-  margin: 0 0 15px 0;
+  margin: 0 3px 15px 0;
 }
 .recipe-show-header-info div span{
   font-size:20px;
@@ -283,6 +289,10 @@ min-height:91vh;
   font-size:20px;
   height:100px;
   overflow: scroll;
+  background-color: rgba(255,255,255,0.3);
+  margin-right: 30px;
+  border-radius: 5px;
+  padding: 5px;
 }
 .show-title{
   font-size: 50px;
@@ -530,10 +540,12 @@ min-height:91vh;
   font-weight: bold;
 }
 .category-diplay ul{
-  padding: 0 10%;
-  height: 400px;
+  padding:5px 10%;
+  max-height: 400px;
   overflow: scroll;
   list-style: none;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
 }
 .category-diplay h3{
   margin:0;
