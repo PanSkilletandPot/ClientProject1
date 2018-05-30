@@ -8,7 +8,7 @@
       <%= image_tag @recipe.avatar.url, :class => "recipe-show-image" %>
     </article>
     <article class="recipe-show-header-info">
-      <span class="recipe-top-sub-header">Type: <span class="unbold"><%= @recipe.category %></span></span>
+      <span class="recipe-top-sub-header">Type: <a href="http://localhost:3000/recipes/category/<%= @recipe.category %>" ><span class="unbold"><%= @recipe.category %></a></span></span>
       <div>
         <span class="recipe-top-sub-header">Creator: </span><span class="unbold"><%=link_to @recipe.user.username, controller: "users", action: "show", id: @recipe.user.id %></span></span></div>
       <div>

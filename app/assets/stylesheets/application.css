@@ -430,6 +430,9 @@ height: 200vh;
   .recipe-show-header-info{
     margin: 20px 0;
   }
+  .show-instructions p{
+    margin-right:initial;
+  }
 }
 @media screen and (max-width: 380px) {
    .landing-main-container{
