@@ -18,7 +18,7 @@
   </section>
   <section>
     <article class="user-recipe-display">
-      <h3 class="user-recipe-title">Here are the recipes <%= @user.username %> has created:</h3>
+      <h3 class="user-recipe-title">Here are the recipes <%= @user.username %> had created:</h3>
       <% if @user.recipes %>
         <ul class="list-without-bullet user-show-recipes">
           <% @user.recipes.each do |recipe| %>

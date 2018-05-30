@@ -8,16 +8,16 @@
       <%= image_tag @recipe.avatar.url, :class => "recipe-show-image" %>
     </article>
     <article class="recipe-show-header-info">
-      <h3><%= @recipe.category %></h3>
+      <span class="recipe-top-sub-header">Type: <a href="http://localhost:3000/recipes/category/<%= @recipe.category %>" ><span class="unbold"><%= @recipe.category %></a></span></span>
       <div>
-        <span><%=link_to @recipe.user.username, controller: "users", action: "show", id: @recipe.user.id %></span></span></div>
+        <span class="recipe-top-sub-header">Creator: </span><span class="unbold"><%=link_to @recipe.user.username, controller: "users", action: "show", id: @recipe.user.id %></span></span></div>
       <div>
         <span><%= @recipe.calculate_prep_time %></span>
       </div>
         <% if @recipe.reviews.length > 0 %>
           <p><%= @recipe.average_rating %>/5 Stars</p>
         <%else%>
-          <p>Not Yet Rated</p>
+          <p>Not Rated</p>
         <% end %>
     </article>
     <article class="show-instructions">
@@ -28,7 +28,7 @@
       <h3>Ingredients:</h3>
       <ul class="list-without-bullet show-ingridients-scroll">
         <% @recipe.ingredients.each do |ingredient| %>
-          <li class=""><span>: <%= ingredient.ingredient %><span><br></li>
+          <li><span class="recipe-ingredient-list-item">: <%= ingredient.ingredient %></span><br></li>
         <% end %>
       </ul>
     </article>
