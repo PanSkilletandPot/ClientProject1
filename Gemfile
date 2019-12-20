@@ -37,7 +37,7 @@ gem 'react-rails'
 # gem 'capistrano-rails', group: :development
 
 #PaperclipGem
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.0"
 
 #jQuery
 gem 'jquery-rails'
