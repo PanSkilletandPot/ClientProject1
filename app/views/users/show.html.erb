@@ -8,11 +8,11 @@
       <h2><span class="show-label">Best Recipe:</span><br><span class="user-content"><%= @user.best_recipe ? @user.best_recipe.recipe_name : "N/A" %></span></h2>
     </div>
     <div class="best best-margin">
-      <h2><span class="show-label">Favorite Recipe:</span><br><span class="user-content"><%= @user.highest_rated_review ? @user.highest_rated_review.recipe.recipe_name : "N/A" %></span></h2>
+      <h2><span class="show-label">People's Choice Recipe:</span><br><span class="user-content"><%= @user.highest_rated_review ? @user.highest_rated_review.recipe.recipe_name : "N/A" %></span></h2>
     </div>
     <div class="stats">
-      <h2><span class="show-label">Recipes Contributed:</span> <span class="user-content"><%= @user.number_of_recipes_entered%></span></h2>
-      <h2><span class="show-label">Recipes Rated:</span> <span class="user-content"><%= @user.number_of_recipes_rated %></span></h2>
+      <h2><span class="show-label">Total Recipes:</span> <span class="user-content"><%= @user.number_of_recipes_entered%></span></h2>
+      <h2><span class="show-label">Rating Given:</span> <span class="user-content"><%= @user.number_of_recipes_rated %></span></h2>
       <h2><%= @user.user_activity_percentile%> of Active Users</h2>
     </div>
   </section>

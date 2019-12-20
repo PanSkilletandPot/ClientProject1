@@ -2,21 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .login-forn-section{
-	padding: 15vh 25% 0;
-	margin: 0 10% 0;
+	padding: 15vh 30px 0;
+	margin: 0 auto;
 	height: 85vh;
-	font-size: 30px;
+	font-size: 25px;
+	max-width:900px;
 	background-color: rgba(203, 188, 151, 0.9);
 }
 .session-form-button input{
-	font-size: 30px;
-    padding: 5px 30px;
-    margin: 20px 0;
+	font-size: 25px;
+    padding: 10px 30px;
+    margin: 31px 0;
     font-family: 'Courgette', cursive;
-    border-color: black;
+    border-color: #667b7f;
+}
+.form_button:hover{
+    color: darkgray !important;
 }
 .session-header{
-	font-size:50px;
+	font-size:40px;
 	margin: 15px 0;
 }
 .session-errors{
@@ -25,4 +29,11 @@
 	position: absolute;
 	top:22%;
     right: 25%;
+}
+.login-forn-section form{
+	display:flex;
+}
+.login-forn-section .field{
+	flex:1;
+	padding-right: 20px;
 }
