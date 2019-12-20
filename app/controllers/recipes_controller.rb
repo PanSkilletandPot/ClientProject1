@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   include RecipesHelper
   def index
+    session[:user_id] = 1
     @recipes = Recipe.all
     @salads = @recipes.get_highest_5_recipes("Salad")
     @mains = @recipes.get_highest_5_recipes("Entree")

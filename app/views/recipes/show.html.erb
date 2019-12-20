@@ -62,19 +62,21 @@
         </header>
           <article class="show-review-grid">
             <%= form_for :review, remote: true, url: { :controller => "reviews", action: "create" } do |f| %>
-              <div>
-                <%= f.label :rating %>
-                <%= f.select :rating, [ 1,2,3,4,5 ]%>
-              </div>
               <div class="review-text-area">
-                <%= f.label :body %><br>
-                <%= f.text_area :body%>
+                <%= f.label :body, "Comments" %><br>
+                <%= f.text_area :body %>
               </div>
               <%= f.hidden_field :recipe_id, :value => @recipe.id%>
               <%= f.hidden_field :user_id, :value => @user_id%>
-              <div class="review-submit-button">
-                <%= f.submit :class => "form_button" %>
-              </div>
+              <div class="review-form-wrapper">
+                <div>
+                  <%= f.label :rating %>
+                  <%= f.select :rating, [ 1,2,3,4,5 ]%>
+                </div>
+                <div class="review-submit-button">
+                  <%= f.submit :class => "form_button" %>
+                </div>
+              </div>  
           <% end %>
         </article>
       </article>

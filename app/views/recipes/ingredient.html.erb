@@ -3,12 +3,12 @@
     <%= render partial: "img_header" %>
     <article class="ingredient-display">
       <header class="ingredients-recipe-display">
-        <h3><%= @recipe.recipe_name %></h3>
-        <h4><%= @recipe.category %></h4>
-        <h4><%= @recipe.calculate_prep_time %></h4>
+        <h1><%= @recipe.recipe_name %></h1>
+        <div><strong>Category:</strong> <%= @recipe.category %></div>
+        <div><strong>Prep Time:</strong> <%= @recipe.calculate_prep_time %></div>
       </header>
       <article>
-        <h4>Instructions:</h4>
+        <h2>Instructions:</h2>
         <p><%= @recipe.instructions %></p>
       </article>
     </article>

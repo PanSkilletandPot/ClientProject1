@@ -31,6 +31,7 @@
 	padding: 10vh 10% 5% 10%;
 	border-radius:5px;
 	background-color: rgba(203, 188, 151, 0.9);
+	padding: 50px 30px 30px;
 }
 .users-info-grid h2{
 	margin: 0 0 2% 0;
@@ -42,7 +43,7 @@
 	grid-row: 1;
 }
 .user-show-recipes{
-	padding: 5px 10%;
+	padding: 10px 30px;
     margin: 0;
     font-size: 40px;
     height: 250px;
@@ -55,8 +56,8 @@
 }
 .user-recipe-title{
 	font-size:35px;
-	margin: 0 0 7% 0;
-	text-align:center;
+	margin: 0 0 30px 0;
+	// text-align:center;
 }
 .stats{
 	grid-column: 2;
@@ -73,45 +74,67 @@
 	margin:30px 0 0 0
 }
 .show-label{
-	font-size: 30px;
+	font-size: 25px;
 }
 .show-recipe-stars{
 	float:right;
 	font-size: 25px;
+	padding-top: 4px;
+}
+.new_user .row{
+	display:flex;
+	justify-content: space-between;
+}
+.new_user .row .field{
+	// flex:1;
+	width: calc(50% - 20px);
+	padding-top: 10px;
+}
+.new_user .row .form_button{
+	padding-top:10px;
 }
 .new-user-form-section{
-	padding: 15vh 25% 0;
+	padding: 15vh 30px 0;
 	margin: 0 10% 0;
 	height: 85vh;
-	min-height:85%;
-	font-size: 30px;
+	font-size: 25px;
 	background-color: rgba(203, 188, 151, 0.9);
+    margin: 0 auto;
+    max-width: 900px;
+    width: 90%;
+}
+.new-user-form-button{
+	margin-top:20px;
 }
 .new-user-form-button input{
-	font-size: 30px;
-    padding: 5px 30px;
+	font-size: 20px;
+    padding: 5px 20px;
     margin: 20px 0;
     font-family: 'Courgette', cursive;
-    border-color:black;
+    border-color:#667b7f;
+    height: 55px !important;
+    padding-top:5px !important;
 }
 .new-user-header{
-	font-size:50px;
+	font-size:40px;
 	margin: 15px 0;
 }
 .user-show-container{
-	padding: 0 10%;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 90%;
 }
 .user-recipe-display{
 	background-color: rgba(203, 188, 151, 0.9);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding: 9vh 10% 5% 10%;
+    padding: 50px 30px;
 }
 .field input{
   font-family: 'Courgette', cursive;
 }
 
 .u-show-head{
-  font-size: 55px !important;
-  margin: 0;
+  font-size: 40px !important;
+  margin: 60px 0 30px 0;
 }

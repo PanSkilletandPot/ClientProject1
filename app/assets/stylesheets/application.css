@@ -42,7 +42,8 @@ nav{
   width:100vw;
   height:75px;
   font-size:30px;
-  background: linear-gradient(rgba(0,0,0,1) 40%, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0));
+  background:#000000;
+  /*background: linear-gradient(rgba(0,0,0,1) 40%, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0));*/
 }
 nav a{
   color:white;
@@ -59,6 +60,7 @@ nav li{
   flex:8;
   width:100vw;
   font-size: 25px;
+  padding: 10px 0;
 }
 .nav-header>a{
   font-size:40px;
@@ -75,8 +77,14 @@ nav li{
   margin: 20px 0 0 0;
   float: right;
   z-index: 6;
-  position: absolute;
+  /*position: absolute;*/
   right: 0px;
+}
+.recipe-menu{
+  margin: 20px 0;
+}
+.recipe-menu li{
+  padding:0 5px;
 }
 .nav-pages{
   flex:2;
@@ -213,9 +221,9 @@ height: 200vh;
   }
 }
 @media screen and (min-width: 820px) {
-  .add-ingredients-container{
+/*  .add-ingredients-container{
     height: 47vh;
-  }
+  }*/
 }
 @media screen and (max-width: 800px) {
   .logged-in,
@@ -472,6 +480,12 @@ height: 200vh;
     padding: 0px 10px;
     padding: 0px 10px;
   }
+}
+
+.review-form-wrapper{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 
